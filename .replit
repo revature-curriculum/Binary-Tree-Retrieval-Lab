@@ -1,7 +1,7 @@
 compile = "javac -classpath .:target/dependency/* -d . $(find . -type f -name '*.java')"
 run = ["java", "-classpath", ".:target/dependency/*", "BSTRetrival"]
 
-entrypoint = ".\src\main\java\BSTRetrival.java"
+entrypoint = "./src/main/java/BSTRetrival.java"
 hidden = ["**/*.class"]
 
 [packager]

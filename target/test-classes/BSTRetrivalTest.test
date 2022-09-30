@@ -1,0 +1,52 @@
+// The purpose of this code segment is to provide test code for the search() method in BinarySearchTreeAddNode.
+
+import org.junit.Before;
+import org.junit.After;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class BSTRetrivalTest {
+  static String str = "";
+  BSTRetrival.Node root;
+  static void inorder(BSTRetrival.Node temp){
+      if (temp == null)
+          return;
+  
+      inorder(temp.left);
+      Integer num = new Integer(temp.key);
+      String nod = Integer.toString(num);
+      str = str+nod+" ";
+      inorder(temp.right);
+  }
+  @Before
+  public void setUp() {
+    str = "";
+    
+        root = new BSTRetrival.Node(50);
+        //left side
+        root.left = new BSTRetrival.Node(25);
+        root.left.left = new BSTRetrival.Node(20);
+        root.left.right = new BSTRetrival.Node(30);
+        //right side 
+        root.right = new BSTRetrival.Node(75);
+        root.right.left = new BSTRetrival.Node(70);
+        root.right.right = new BSTRetrival.Node(80);
+  }
+  @Test
+  public void NonExisitingNodeTest() {
+    int key = 100;
+  
+    BSTRetrival.Node testAns = BSTRetrival.SearchBT(root,key);
+    
+    assertEquals(null,testAns);
+  }
+  @Test
+  public void FoundExisitingNodeTest() {
+    int key = 30;
+  
+    BSTRetrival.Node foundNode = BSTRetrival.SearchBT(root,key);
+  
+    assertTrue("Could not find existing Node: "+key, root.left.right == foundNode);
+  }
+}
+

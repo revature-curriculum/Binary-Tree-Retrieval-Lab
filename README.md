@@ -1,7 +1,7 @@
 # Instructions:
 In this lab you are given the `Node` class, a constructor of `Node(int x)`, and the method signature for your **Retrieval** method: `static Node SearchBT(Node temp, int key)`.
 
-Write your logic in place of the `TODO` line in the `SearchBT()`'s body'. Do not forget to add a value to the given variable `key` in the main method. Your method should return a Node value that exists within the pre-constructed Binary Tree.
+Write your logic in place of the `TODO` line in the `SearchBT()`'s body'. Do not forget to add a value to the given variable `key` in the main method. Your method should return a Node value that exists within the pre-constructed Binary Tree `root`.
 > This method should not create a new node. If the node does **not** exist the method should return `null`.
 
 # Test
